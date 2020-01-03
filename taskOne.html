@@ -1,3 +1,10 @@
 <script>
+  let myPromise = new Promise((resolve) => {
+    setTimeout(() => alert('Hello'), 2000 )
+    resolve();
+  });
 
+  myPromise.then(( ) => {
+    console.log("myPromise зарезолвился, и я узнал об этом");
+  })
 </script>
