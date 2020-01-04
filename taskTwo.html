@@ -1,11 +1,10 @@
 <script>
   let myPromise = new Promise((resolve) => {
     let random = Math.random();
-    setTimeout(() => alert(random), 2000);
     resolve(random);
   });
 
   myPromise.then((res) => {
-    console.log("myPromise зарезолвился, и я узнал об этом");
+    console.log(res);
   })
 </script>
