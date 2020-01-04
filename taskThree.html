@@ -1,0 +1,15 @@
+<script>
+  let doAfter = (sec) => new Promise((resolve) => {
+    setTimeout(() => resolve(), sec * 1000);
+  });
+
+  // doAfter(5).then( () => console.log('я сработал через 5 секунд') );
+  // doAfter(3).then( () => console.log('а я сработал через 3 секунд') );
+  // doAfter(10).then( () => console.log('я сработал через 10 секунд') );
+
+  let promise3 = doAfter(3);
+  let promise5 = doAfter(5);
+
+  promise5.then( () => console.log('я сработал через 5 секунд') );
+  promise3.then( () => console.log('а я сработал через 3 секунд') );
+</script>
