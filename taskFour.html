@@ -18,10 +18,16 @@
   //   .then(() => console.log('Мой промис зарезолвился'))
   //   .then(() => console.log('Мой промис тоже зарезолвился следом'))
 
-  let callback1 = () => console.log('Мой промис зарезолвился');
-  let callback2 = () => console.log('Мой промис тоже зарезолвился следом');
-
-  let pr1 = doAfter(3);
-  let pr2 = pr1.then(callback1);
-  pr2.then(callback2);
+  // let callback1 = () => "privet mityaycho";
+  // let callback2 = () => "ty geniy coda!";
+  //
+  // let pr1 = doAfter(3);
+  // let pr2 = pr1.then(() => callback1);
+  // pr2.then((name) => console.log(name + callback2));
+    pr = doAfter(3)
+    .then(() => {
+      console.log('Мой промис зарезолвился');
+      return "mityaycho geniy";
+    })
+    .then((name) => console.log('Этим зарезолвился мой промис: ' + name))
 </script>
