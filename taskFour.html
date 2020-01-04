@@ -8,5 +8,20 @@
   // promise3.then( () => console.log('и я тоже следом сработал через 3 секунд') );
   // promise3.then( () => console.log('и я') );
 
-    setTimeout(() => console.log('myPromise resolved and i know it'), 5000)
+  // setTimeout(() => console.log('myPromise resolved and i know it'), 5000);
+
+  // let pr1 = doAfter(3);
+  // let pr2 = pr1.then(() => console.log('Мой промис зарезолвился'));
+  // let something = pr2.then(() => console.log('Мой промис тоже зарезолвился следом за pr1'));
+  //
+  // doAfter(3)
+  //   .then(() => console.log('Мой промис зарезолвился'))
+  //   .then(() => console.log('Мой промис тоже зарезолвился следом'))
+
+  let callback1 = () => console.log('Мой промис зарезолвился');
+  let callback2 = () => console.log('Мой промис тоже зарезолвился следом');
+
+  let pr1 = doAfter(3);
+  let pr2 = pr1.then(callback1);
+  pr2.then(callback2);
 </script>
