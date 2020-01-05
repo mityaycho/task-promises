@@ -1,0 +1,12 @@
+<script>
+  let getRandomAfter = (sec) => new Promise((resolve) => {
+    let random = Math.random();
+    setTimeout(() => resolve(random), sec * 1000);
+  });
+
+  getRandomAfter(4).then( number => console.log(`я получил ${number} спустя 4 секунды`));
+
+  let promises = [getRandomAfter(1),getRandomAfter(2), getRandomAfter(3)];
+  let commonPromise = Promise.all(promises);
+  commonPromise.then( (arr) => console.log(arr.reduce((a, b) => a + b)) );
+</script>
