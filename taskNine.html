@@ -1,0 +1,15 @@
+<script src="axios.js"></script>
+<script src="api.js"></script>
+
+<script>
+  const microsoftVacancy = api.getVacanciesCountFromMicrosoft()
+    .then(data => data.data.vacancies);
+
+  const gogleVacancy = api.getVacanciesCountFromGoogle()
+    .then(data => data.data.vacancies);
+
+  const studentsItKamasutra = api.sendStudentsCountToItKamasutra(20)
+    .then(data => data.data.requestedCount);
+  const sumApi = Promise.all([microsoftVacancy, gogleVacancy, studentsItKamasutra]);
+  sumApi.then((arr) => console.log(arr.reduce((a, b) => a + b)));
+</script>
